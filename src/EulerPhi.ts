@@ -1,5 +1,7 @@
+import { NaturalNumberError } from "./utils";
+
 export function eulerPhi(n: bigint): bigint {
-  if (n <= 0) throw new Error("n must be a natural number");
+  if (n <= 0) throw new NaturalNumberError("n");
 
   let result = 1n;
   for (let i = 2n; i * i <= n; i++) {
