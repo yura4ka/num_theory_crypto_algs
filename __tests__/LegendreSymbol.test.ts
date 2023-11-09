@@ -2,6 +2,7 @@ import { legendre } from "../src/LegendreSymbol";
 
 const tests: [bigint, bigint, number | undefined, boolean][] = [
   [2n, 2n, undefined, true],
+  [3n, 10n, undefined, true],
   [1n, 3n, 1, false],
   [2n, 3n, -1, false],
   [3n, 3n, 0, false],
