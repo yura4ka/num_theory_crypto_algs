@@ -1,9 +1,4 @@
-import { NaturalNumberError } from "./utils";
-
-export function gcd(a: bigint, b: bigint): bigint {
-  while (b !== 0n) [a, b] = [b, a % b];
-  return a;
-}
+import { NaturalNumberError, gcd } from "./utils";
 
 export function lcm(...args: bigint[]): bigint {
   if (args.length < 2) throw new Error("Invalid arguments");

@@ -26,8 +26,6 @@ export interface CongruenceParams {
 export function solveCongruenceSystem(data: CongruenceParams[]): bigint {
   let M = data.reduce((agg, curr) => agg * curr.m, 1n);
 
-  console.log(M);
-
   let result = 0n;
   for (const i of data) {
     let mi = M / i.m;

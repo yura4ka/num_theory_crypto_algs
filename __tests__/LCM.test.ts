@@ -1,13 +1,4 @@
-import { gcd, lcm } from "../src/LCM";
-
-const gcdTests = [
-  [54n, 24n, 6n],
-  [48n, 18n, 6n],
-  [22n, 33n, 11n],
-  [11n, 17n, 1n],
-  [17n, 11n, 1n],
-  [225n, 135n, 45n],
-];
+import { lcm } from "../src/LCM";
 
 const lcmTests: [bigint[], bigint | undefined, boolean][] = [
   [[], undefined, true],
@@ -27,12 +18,6 @@ const lcmTests: [bigint[], bigint | undefined, boolean][] = [
   [[5n, 2n, 3n], 30n, false],
   [[4n, 6n, 8n, 2n], 24n, false],
 ];
-
-describe("GCD", () => {
-  test.concurrent.each(gcdTests)("gcd(%d, %d)", (a, b, expected) => {
-    expect(gcd(a, b)).toEqual(expected);
-  });
-});
 
 describe("LCM", () => {
   test.concurrent.each(lcmTests)("lcm(%p)", (args, expected, throws) => {
