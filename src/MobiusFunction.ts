@@ -21,7 +21,6 @@ export function mobius(n: bigint): 0 | 1 | -1 {
     }
   }
 
-  // if (p === 0) return -1;
   if (n > 1) p++;
 
   return p % 2 == 0 ? 1 : -1;

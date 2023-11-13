@@ -1,7 +1,6 @@
-import { lcm } from "./LCM";
 import { isPrime } from "./MillerRabinTest";
 import { pad, unpad } from "./OAEP";
-import { gcd, getRandomBigint, inverse, powMod } from "./utils";
+import { getRandomBigint, inverse, powMod } from "./utils";
 import crypto from "crypto";
 
 interface PublicKey {
