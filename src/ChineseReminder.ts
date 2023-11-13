@@ -1,20 +1,4 @@
-function inverse(a: bigint, m: bigint): bigint {
-  let q: bigint;
-  let t = 0n;
-  let t1 = 1n;
-  let r = m;
-
-  while (a !== 0n) {
-    q = r / a;
-    [t, t1] = [t1, t - q * t1];
-    [r, a] = [a, r - q * a];
-  }
-
-  if (r > 1n) throw new Error("divisors should be pairwise coprime");
-  if (t < 0n) t += m;
-
-  return t;
-}
+import { inverse } from "./utils";
 
 // x = c(mod m)
 

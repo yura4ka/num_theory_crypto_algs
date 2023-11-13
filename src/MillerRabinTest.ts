@@ -1,12 +1,4 @@
-import { abs } from "./utils";
-import crypto from "crypto";
-
-function getRandomInt(min: bigint, max: bigint) {
-  if (min === max) return min;
-  const t = new BigInt64Array(1);
-  crypto.getRandomValues(t);
-  return min + (abs(t[0]) % (max - min));
-}
+import { getRandomBigint, powMod } from "./utils";
 
 export function isPrime(n: bigint, k = 10): boolean {
   if (n < 3n) return true;
@@ -20,8 +12,8 @@ export function isPrime(n: bigint, k = 10): boolean {
   }
 
   for (let i = 0; i < k; i++) {
-    let a = getRandomInt(2n, n - 1n);
-    let x = a ** d % n;
+    let a = getRandomBigint(2n, n - 1n);
+    let x = powMod(a, d, n);
     for (let j = 0; j < s; j++) {
       let y = (x * x) % n;
       if (y === 1n && x !== 1n && x !== n - 1n) return false;

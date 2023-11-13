@@ -1,5 +1,4 @@
 import { legendre } from "./LegendreSymbol";
-import { sqrt } from "./utils";
 
 interface Point {
   x: bigint;
