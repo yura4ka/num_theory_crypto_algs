@@ -1,5 +1,3 @@
-import crypto from "crypto";
-
 export class NaturalNumberError extends Error {
   constructor(argument: string) {
     super(argument + " must be a natural number");
@@ -49,6 +47,9 @@ export function inverse(a: bigint, m: bigint): bigint {
   let t = 0n;
   let t1 = 1n;
   let r = m;
+
+  a %= m;
+  if (a < 0) a += m;
 
   while (a !== 0n) {
     q = r / a;

@@ -33,7 +33,7 @@ export function sqrtP(n: bigint, p: bigint): bigint {
     nn >>= 1n;
   }
 
-  if (r.y !== 0n) return 0n;
-  if ((r.x * r.x) % p !== n) return 0n;
+  if (r.y !== 0n) return -1n;
+  if ((r.x * r.x) % p !== n) return -1n;
   return r.x;
 }
